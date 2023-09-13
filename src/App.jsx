@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header';
-import Body from './components/Body';
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { AppProvider } from "./contexts/AppContext";
+import { Relaxing, Home } from "./pages";
 function App() {
-
   return (
-     <>
-     <Header/>
-      <Body/>
-     </>
-  )
+    <>
+      <AppProvider>
+        <Routes>
+          <Route path="/" exc element={<Home />} />
+          <Route path="/relaxing" exc element={<Relaxing />} />
+        </Routes>
+      </AppProvider>
+    </>
+  );
 }
 
-export default App
+export default App;

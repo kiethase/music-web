@@ -1,7 +1,7 @@
 import Home from "./Home";
-import About from "./About";
+import Relaxing from "./Relaxing";
 
 export {
     Home,
-    About
+    Relaxing,
 };
