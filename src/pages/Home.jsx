@@ -12,23 +12,8 @@ const Home = () => {
   const [playAudio1, { stop: stopAudio1 }] = useSound(audioRelaxing);
   const [playAudio2, { stop: stopAudio2 }] = useSound(audioInspiration);
 
-  document.onclick = () => applyCursorRippleEffect(event);
 
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-  // Hiệu ứng click giọt nước lan trong website
-  function applyCursorRippleEffect(e) {
-    const ripple = document.createElement("div");
-
-    ripple.className = "ripple";
-    document.body.appendChild(ripple);
-
-    ripple.style.left = `${e.clientX}px`;
-    ripple.style.top = `${e.clientY}px`;
-
-    ripple.style.animation = "ripple-effect .4s  linear";
-    ripple.onanimationend = () => document.body.removeChild(ripple);
-  }
 
   // Thực hiện nút welcome để vào trang website
   const ClickWelcome = async () => {
@@ -56,7 +41,7 @@ const Home = () => {
         `}
       >
         <a
-          // href="/relaxing"
+          href="/relaxing"
           className="hover:text-transparent  transition duration-700 fade-in-right
                 bg-clip-text bg-gradient-to-r 
                 from-[#157540] via-[#0a6e59] to-[#2182afe7]"
